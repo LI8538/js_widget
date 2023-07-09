@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(246, 190, 190);
+    background-color: rgb(245, 205, 205);
 }
 
 h1{
@@ -7,7 +7,7 @@ h1{
 }
 
 .liste{
-  background-color: rgb(148, 230, 240);
+  background-color: rgb(178, 229, 235);
   width: 80%;
   margin: auto;
   border: 3px solid #4287f5;
