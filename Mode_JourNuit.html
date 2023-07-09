@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   body{
+    background-color:white;
+    color: black;
+   }
+
+   .dark{
+    background-color: black;
+    color: white;
+   }
+
+   button{
+    position: absolute;
+    right: 0;
+   }
+  </style>
+</head>
+<body>
+  <h1>Hello World !</h1>
+
+<p>Je suis sur un site cool ! click en bas pour changer le mode Nuit et Jour , à vous de jouer </p>
+
+<button id="theme-btn">🌙</button>
+
+  <script>
+   const toggle_btn = document.getElementById('theme-btn');
+
+const body = document.getElementsByTagName('body')[0];
+
+console.log('toggle_btn',toggle_btn);
+
+const dark_theme_class = 'dark';
+
+toggle_btn.addEventListener('click', function() {
+
+ if (body.classList.contains(dark_theme_class)) {
+
+ 
+
+ body.classList.remove(dark_theme_class);
+
+}
+
+ else {
+
+ body.classList.add(dark_theme_class);
+
+};
+
+
+if (toggle_btn.innerText ==='🌙') {
+  toggle_btn.innerText= '🌝'
+}else{
+  toggle_btn.innerText= '🌙'
+}
+
+
+
+});
+  </script>
+</body>
+</html>
