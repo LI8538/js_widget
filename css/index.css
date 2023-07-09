@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(246, 190, 190);
+}
+
+h1{
+    text-align: center;
+}
+
+.liste{
+  background-color: rgb(148, 230, 240);
+  width: 80%;
+  margin: auto;
+  border: 3px solid #4287f5;
+}
+
+.liste ol li{
+    margin-top: 20px;
+}
+
+.liste ol li:hover{
+   background-color: rgb(192, 255, 32);
+   padding: 20px;
+}
