@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gallery_image</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+      }
+      .menu ul {
+        display: flex;
+      }
+      .menu ul li {
+        background-color: rgb(3, 2, 2);
+        color: white;
+        padding: 15px;
+        margin: 5px;
+        list-style-type: none;
+        cursor: pointer;
+      }
+      .cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .card_item {
+        width: 30%;
+        margin: 5px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>gallery_image</h1>
+    <div class="menu">
+      <ul>
+        <li class="tout">tout</li>
+        <li class="vetement">vêtement</li>
+        <li class="pantalon">pantalon</li>
+        <li class="chaussure">chaussure</li>
+      </ul>
+    </div>
+    <div class="cards">
+      <div class="card_item" data-item="vetement">
+        <img
+          src="https://img.freepik.com/photos-gratuite/vetements_144627-25214.jpg?w=1380&t=st=1689179904~exp=1689180504~hmac=64d902e0b462b7803fb2c22ff432651d686e32f90cd044c278bd32483351dc74"
+          alt="vetement"
+        />
+      </div>
+      <div class="card_item" data-item="vetement">
+        <img
+          src="https://img.freepik.com/photos-gratuite/femme-aux-cheveux-noirs-sourires-rouge-levres-s-appuie-support-vetements-detient-paquet-fond-rose_197531-17609.jpg?w=1380&t=st=1689179954~exp=1689180554~hmac=48f08219dd0f4de48ec6efa340a4966844ba34dfae6c3cffa78cb95ce820e559"
+          alt="vetement"
+        />
+      </div>
+      <div class="card_item" data-item="vetement">
+        <img
+          src="https://img.freepik.com/photos-gratuite/jolie-femme-souriante-elegante-choisissant-vetements-dans-magasin-vetements_285396-4642.jpg?w=1380&t=st=1689179988~exp=1689180588~hmac=8fc0ce543e4405da490206e34391a74bff1123f8443acfe585bc57ef696e21b3"
+          alt="vetement"
+        />
+      </div>
+      <div class="card_item" data-item="pantalon">
+        <img
+          src="https://img.freepik.com/photos-gratuite/jeans_1203-8096.jpg?w=1380&t=st=1689180075~exp=1689180675~hmac=887f583552cc6cc6d5cb2ca2bab5ea6461604f97e93ae6e681365a0321a33881"
+          alt="pantalon"
+        />
+      </div>
+      <div class="card_item" data-item="pantalon">
+        <img
+          src="https://img.freepik.com/photos-gratuite/pantalon-noir-textile-achats-blanc_1203-6504.jpg?w=1380&t=st=1689180114~exp=1689180714~hmac=ab0d6f87106a687e54fae7663f50e4373c469c62fb755caee566f49237f8199d"
+          alt="pantalon"
+        />
+      </div>
+      <div class="card_item" data-item="pantalon">
+        <img
+          src="https://img.freepik.com/photos-gratuite/vetements-pantalons-vetements-mode-lumiere_1203-6400.jpg?w=740&t=st=1689180146~exp=1689180746~hmac=2764ea20485168b328585f15a65d2a49091155743c7da4c2bfbe3a6240a047de"
+          alt="pantalon"
+        />
+      </div>
+      <div class="card_item" data-item="chaussure">
+        <img
+          src="https://img.freepik.com/vecteurs-libre/couleur-sport-sneaker_98292-3191.jpg?w=1380&t=st=1689184617~exp=1689185217~hmac=f5f133ebacff4e7c6d411c4e6b5d291718bedb738a54d255b141a3f855489b87"
+          alt="chaussure"
+        />
+      </div>
+      <div class="card_item" data-item="chaussure">
+        <img
+          src="https://img.freepik.com/photos-gratuite/paire-baskets_144627-3810.jpg?t=st=1689184617~exp=1689185217~hmac=c8939a18c994b317f07a8e7073db43ce522f445ffc8638f0142bc54e7b327e57"
+          alt="chaussure"
+        />
+      </div>
+      <div class="card_item" data-item="chaussure">
+        <img
+          src="https://as1.ftcdn.net/v2/jpg/05/62/37/20/1000_F_562372012_fVBn742VuCxuewFETVpnwxjh2wlt1nFp.jpg"
+          alt="chaussure"
+        />
+      </div>
+    </div>
+    <script>
+      const tout = document.querySelector(".tout");
+      console.log(tout.innerHTML);
+      const vetement = document.querySelector(".vetement");
+      console.log(vetement.innerHTML);
+      const pantalon = document.querySelector(".pantalon");
+      console.log(pantalon.innerHTML);
+      const chaussure = document.querySelector(".chaussure");
+      console.log(chaussure.innerHTML);
+      const cardItems = document.querySelectorAll(".card_item");
+      console.log(cardItems);
+
+      tout.addEventListener("click",function(){
+        cardItems.forEach(e => {
+            e.style.display = "";
+        });
+      });
+
+      vetement.addEventListener("click",function(){
+        //filter par catégorie "vetement"
+        cardItems.forEach(e =>{
+            if (e.getAttribute("data-item") === "vetement") {
+                e.style.display = "";
+            }else{
+                e.style.display = "none";
+            }
+        });
+      });
+
+      pantalon.addEventListener("click",function(){
+        cardItems.forEach(e =>{
+            if (e.getAttribute("data-item") === "pantalon") {
+                e.style.display = "";
+            }else{
+                e.style.display = "none";
+            }
+        })
+      })
+
+      chaussure.addEventListener("click",function(){
+        cardItems.forEach(e =>{
+            if (e.getAttribute("data-item") === "chaussure") {
+                e.style.display = "";
+            }else{
+                e.style.display = "none";
+            }
+        })
+      })
+
+
+      
+    </script>
+  </body>
+</html>
