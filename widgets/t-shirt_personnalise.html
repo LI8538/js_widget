@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docut-shirt_personnalisé</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+         padding: 0;
+         margin: 0;
+         text-align: center;
+        }
+
+        img{
+            max-width: 80%;
+            margin: 20px;
+        }
+
+        ul li img{
+         width: 48px;
+        }
+
+        ul li{
+            list-style-type: none;
+            background-color: rgb(224, 243, 101);
+            margin:8px;
+
+        }
+
+        ul{
+            display: flex;
+            justify-content: center;
+        }
+
+        @media only screen and (min-width: 500px)  {
+            img{
+            max-width: 30%;
+            margin: 20px;
+        }
+        ul li img{
+         width: 100px;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>t-shirt_personnalisé</h1>
+    <img src="https://p.turbosquid.com/ts-thumb/F6/CvMLm5/sGWrIb9d/r/jpg/1490702407/2000x2000/fit_q99/6d0522f8cb8e11072f684c2b17d0658515d4471f/r.jpg" alt="t-shirt">
+
+    
+
+    <div class="logos">
+        <ul>
+            <li class="logo-item coeur" data-item="coeur"><img src="https://images.teamshirts.net/image/upload/q_auto,fl_lossy,f_auto,w_400/sprd-eu/designs/fe935caa-2b28-4e04-ad9b-4158d9856ff8,mediaType=png,width=600,height=600" alt="coeur"></li>
+            <li class="logo-item smile" data-item="smile"><img src="https://images.teamshirts.net/image/upload/q_auto,fl_lossy,f_auto,w_400/sprd-eu/designs/c182a9f9-215a-4ff2-9527-505e12b1ed7c,mediaType=png,width=600,height=600" alt="smile"></li>
+            <li class="logo-item biere" data-item="biere"><img src="https://images.teamshirts.net/image/upload/q_auto,fl_lossy,f_auto,w_400/sprd-eu/designs/6168470b-d1c4-4282-acb2-706b5ebacbbb,mediaType=png,width=600,height=600" alt="biere"></li>
+        </ul>
+    </div>
+
+    <script>
+       // Sélectionnez l'élément du t-shirt
+const tshirtImage = document.querySelector('img[src="https://p.turbosquid.com/ts-thumb/F6/CvMLm5/sGWrIb9d/r/jpg/1490702407/2000x2000/fit_q99/6d0522f8cb8e11072f684c2b17d0658515d4471f/r.jpg"]');
+
+// Sélectionnez l'élément du logo coeur
+const coeur = document.querySelector('.coeur');
+
+// Ajoutez un gestionnaire d'événement de clic au logo coeur
+coeur.addEventListener('click', function() {
+  // Récupérez l'URL de l'image du logo coeur
+  const logoUrl = this.querySelector('img').src;
+
+  // Appliquez l'URL de l'image du logo coeur à l'attribut src de l'image du t-shirt
+  tshirtImage.src = logoUrl;
+});
+    </script>
+</body>
+</html>

@@ -1,11 +1,38 @@
 body{
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 h1{
     text-align: center;
 }
+
+.js{
+    width: 88px;
+    margin: 50px;
+    transition: 9s;
+    -webkit-transition: 9s;
+    -moz-transition: 9s;
+    -ms-transition: 9s;
+    -o-transition: 9s;
+    -webkit-animation:spin 4s linear infinite;
+-moz-animation:spin 4s linear infinite;
+animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+
+.js:hover{
+    transform: rotate(300deg);
+    -webkit-transform: rotate(300deg);
+    -moz-transform: rotate(300deg);
+    -ms-transform: rotate(300deg);
+    -o-transform: rotate(300deg);
+}
+
 
 .liste{
   background-color: rgb(207, 242, 246);
@@ -19,7 +46,7 @@ h1{
 }
 
 .liste ol li:hover{
-   background-color: rgb(7, 7, 7);
+   background-color: rgb(245, 233, 126);
    padding: 8px;
 }
 
@@ -28,5 +55,5 @@ h1{
 }
 
 .liste ol li a:hover{
-   color: white;
+   color: rgb(19, 18, 18);
  }
