@@ -57,3 +57,11 @@ animation:spin 4s linear infinite;
 .liste ol li a:hover{
    color: rgb(19, 18, 18);
  }
+
+ /* footer */
+ footer{
+    margin-top: 8px;
+    background-color: black;
+    color: white;
+    padding: 1px;
+ }
