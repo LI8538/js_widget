@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>T-Shirt Personnalisé</title>
+    <style type="text/css">
+      .home{
+      font-size: 30px;
+      margin-left: 30px;
+      }
+      .fileBox{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+      }
+
+      .warp {
+        display: inline-block;
+        vertical-align: bottom;
+        position: relative;
+      }
+
+      .warp-content {
+        border: 1px solid red;
+        width: 80px;
+        height: 50px;
+        /* line-height: 150px; */
+        text-align: center;
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid red;
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      img {
+        width: 160px;
+        height: 180px;
+        border: 1px dotted rgba(214, 8, 8, 0.671);
+        /* margin-top: 0px; */
+        vertical-align: bottom;
+        opacity: 0.8;
+      }
+
+      .t-shirt {
+        background-image: url(https://p.turbosquid.com/ts-thumb/F6/CvMLm5/sGWrIb9d/r/jpg/1490702407/2000x2000/fit_q99/6d0522f8cb8e11072f684c2b17d0658515d4471f/r.jpg);
+        background-repeat: no-repeat;
+        background-size: 500px 500px;
+        padding: 168px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="home"><a href="../index.html">🏠</a></p>
+    <div class="fileBox">
+      <h1>t-shirt_personnalisé</h1>
+
+      <!-- le grand boxe pour afficher l'image upload-->
+      <div class="t-shirt">
+
+        <img src=""/>
+      </div>
+
+       <!--petit box clic et upload image  -->
+       <div class="warp">
+        <div class="warp-content">Upload image</div>
+        <input type="file" id="file" />
+      </div>
+    </div>
+
+
+
+    <!-- <a href="http://www.alsacreations.com/css/img/picto-quiz.png"
+   download="Pacman_Kiwi.png">Télécharger l'image</a> -->
+
+
+
+
+
+    <!-- fonction pour sélectionner les image et affiche dans le bon zone -->
+    <script type="text/javascript">
+      var file = document.getElementById("file");
+      var image = document.querySelector("img");
+      file.onchange = function () {
+        var fileData = this.files[0]; //获取到一个FileList对象中的第一个文件( File 对象),是我们上传的文件
+        var pettern = /^image/;
+
+        console.info(fileData.type);
+
+        if (!pettern.test(fileData.type)) {
+          alert("图片格式不正确");
+          return;
+        }
+        var reader = new FileReader();
+        reader.readAsDataURL(fileData); //异步读取文件内容，结果用data:url的字符串形式表示
+        /*当读取操作成功完成时调用*/
+        reader.onload = function (e) {
+          console.log(e); //查看对象
+          console.log(this.result); //要的数据 这里的this指向FileReader（）对象的实例reader
+          image.setAttribute("src", this.result);
+        };
+      };
+    </script>
+  </body>
+</html>
