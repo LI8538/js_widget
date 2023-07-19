@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo-test</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exo-Js</h1>
+    <button onclick="document.getElementById('demo').innerHTML = Date()">Clic Date()</button>
+    <p id="demo">Clic Date()</p>
+    <hr>
+    <button onclick="document.getElementById('exo2-1').src='https://www.w3schools.com/js/pic_bulbon.gif'">light on</button>
+    <button onclick="document.getElementById('exo2-1').src='https://www.w3schools.com/js/pic_bulboff.gif'">light off</button>
+    <p>afficher image avec différent bouttons</p>
+    <img id="exo2-1" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="">
+    <hr>
+    <button onclick="document.getElementById('exo3').style.fontSize='30px'">changer de style</button>
+    <p id="exo3">Clique sur le boutton pour changer le style de texte</p>
+    <hr>
+    <button onclick="document.getElementById('exo4').style.display='none'">display='none'</button>
+    <button onclick="document.getElementById('exo4').style.display='block'">display='block'</button>
+    <p id="exo4">disparaitre le paragraphe et apparaitre le paragraphe</p>
+    <hr>
+    
+</body>
+</html>
